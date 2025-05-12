@@ -6,6 +6,34 @@ div.content {
     width: 100%
 }
 
+div.bg {
+    width: 100%;
+    height: 100vh;
+}
+
+div.bg::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   background-image: url('../assets/img/snow_bg.jpg');
+   animation: bgFadeIn 1s ease-in-out;
+   filter: grayscale(70%);
+   z-index: -1;
+}
+
+@keyframes bgFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 div.header {
     opacity: 0;
     animation: textfadeIn 1s ease-in-out;
@@ -46,36 +74,36 @@ h1 {
     margin: 0;
     overflow: visible;
   }
-  h1.animated {
+h1.animated {
     position: relative;
-    background: linear-gradient(90deg, #3b3b95, #105063, #25466e, #934a7d);
-    background-size: 300% 300%;
+    background: linear-gradient(270deg, #934a7d, #3b3b95, #75017f, #25466e, #934a7d);
+    background-size: 400% 400%;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientMove 3s infinite linear;
+    animation: gradientFlow 6s ease-in-out infinite;
     white-space: nowrap;
-  }
-  
-  @keyframes gradientMove {
+}
+
+@keyframes gradientFlow {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
-  }
+}
 
 .bold {
   font-weight: 600;
 }
 
 img.pf {
-    margin-top: -50px;
-    border-radius: 100%;
-    width: 300px;
+    border-radius: 40%;
+    width: 350px;
     height: 300px;
     opacity: 0;
     animation: pfFadeIn 1s ease-in-out forwards 1.5s;
@@ -90,7 +118,7 @@ div.heading {
 }
 
 div.divider {
-    width: 2px;
+    width: 1px;
     border-radius: 10px;
     height: 300px;
     background-color: #9a9a9a;
@@ -123,7 +151,7 @@ div.divider {
 @media (max-width: 800px) {
     div.divider {
         width: 350px;
-        height: 2px;
+        height: 1px;
         margin: 64px 0;
         animation: mobileDividerFadeInBounce 1.5s ease-out forwards;
     }
