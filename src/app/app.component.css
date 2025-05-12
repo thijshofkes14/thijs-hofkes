@@ -119,3 +119,60 @@ div.divider {
         transform: translateY(0);
     }
 }
+
+@media (max-width: 800px) {
+    div.divider {
+        width: 350px;
+        height: 2px;
+        margin: 64px 0;
+        animation: mobileDividerFadeInBounce 1.5s ease-out forwards;
+    }
+    div.heading {
+        flex-direction: column
+    }
+    h1 {
+        text-align: center;
+    }
+    img.pf {
+        animation: mobilePfFadeIn 1s ease-in-out forwards 1.5s;
+    }
+    div.header {
+        opacity: 0;
+        animation: mobileTextfadeIn 1s ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 1.5s;
+    }
+
+    @keyframes mobileTextfadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes mobilePfFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes mobileDividerFadeInBounce {
+        0% {
+            width: 180px;
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            width: 350px;
+        }
+    }
+}
