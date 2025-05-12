@@ -1,0 +1,126 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+div.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%
+}
+
+div.header {
+    opacity: 0;
+    animation: textfadeIn 1s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes textfadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pfFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+h1 {
+    text-align: left;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-size: 100px;
+    font-style: normal;
+    line-height: 1.1; /* Set to 1 for proper spacing */
+    margin: 0;
+    overflow: visible;
+  }
+  h1.animated {
+    position: relative;
+    background: linear-gradient(90deg, #3b3b95, #105063, #25466e, #934a7d);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite linear;
+    white-space: nowrap;
+  }
+  
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.bold {
+  font-weight: 600;
+}
+
+img.pf {
+    margin-top: -50px;
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+    animation: pfFadeIn 1s ease-in-out forwards 1.5s;
+}
+
+div.heading {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+div.divider {
+    width: 2px;
+    border-radius: 10px;
+    height: 300px;
+    background-color: #9a9a9a;
+    margin: 64px;
+    opacity: 0;
+    animation: dividerFadeInBounce 1.5s ease-out forwards;
+}
+
+@keyframes dividerFadeInBounce {
+    0% {
+        height: 150px;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+        height: 300px;
+    }
+    60% {
+        transform: translateY(-50px)
+    }
+    85% {
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

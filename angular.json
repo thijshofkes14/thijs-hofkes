@@ -28,6 +28,7 @@
                 "glob": "**/*",
                 "input": "public"
               },
+              "src/assets",
               "src/_routes.json"
             ],
             "styles": [
@@ -92,7 +93,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
