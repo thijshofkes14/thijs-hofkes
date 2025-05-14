@@ -11,6 +11,10 @@ div.bg {
     height: 100vh;
 }
 
+mat-card.bundle {
+    padding: 24px 56px;
+}
+
 div.bg::before {
    content: "";
    position: absolute;
@@ -18,11 +22,10 @@ div.bg::before {
    left: 0;
    width: 100%;
    height: 100%;
-   opacity: 0.1;
+   opacity: 0.3;
    background-size: cover;
-   background-image: url('../assets/img/snow_bg.jpg');
+   background-image: linear-gradient(rgba(103, 103, 103, 0.5), rgba(138, 138, 138, 0.5)), url('../assets/img/snow_bg.jpg');
    animation: bgFadeIn 1s ease-in-out;
-   filter: grayscale(70%);
    z-index: -1;
 }
 
@@ -104,8 +107,8 @@ h1.animated {
 
 img.pf {
     border-radius: 40%;
-    width: 350px;
-    height: 300px;
+    width: 285px;
+    height: 250px;
     opacity: 0;
     animation: pfFadeIn 1s ease-in-out forwards 1.5s;
 }
@@ -150,10 +153,13 @@ div.divider {
 }
 
 @media (max-width: 800px) {
+    mat-card.bundle {
+        padding: 56px 24px;
+    }
     div.divider {
         width: 200px;
         height: 1px;
-        margin: 64px 0;
+        margin: 36px 0;
         animation: mobileDividerFadeInBounce 1.5s ease-out forwards;
     }
     div.heading {
@@ -165,8 +171,8 @@ div.divider {
     }
     img.pf {
         animation: mobilePfFadeIn 1s ease-in-out forwards 1.5s;
-        height: 200px;
-        width: 225px;
+        height: 175px;
+        width: 200px;
     }
     div.header {
         opacity: 0;
